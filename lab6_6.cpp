@@ -68,6 +68,10 @@ int main()
 				break;
 				break;
 		}
+		if ((pos[0] < 0 || pos[0] >= side) && (pos[1] < 0 || pos[1] >= side) || cmd[i+1] == NULL)
+		{
+			break;
+		}
 	}
 	return 0;
 }
