@@ -3,10 +3,12 @@ int main()
 {
 	int people;
 	scanf("%d", &people);
-	int score[people], love[people][2];
+	int score[people] = {}, love[people][2];
 	for (int i = 0; i < people; i++)
 	{
 		scanf("%d %d", &love[i][0], &love[i][1]);
+		score[love[i][0]]++;
+		score[love[i][i]]++;
 	}
 	return 0;
 }
