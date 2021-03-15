@@ -19,88 +19,92 @@ int main()
 		switch (cmd[i])
 		{
 			case 'U':
-				switch (paper[pos[0]][pos[1]])
+				if (pos[0] > 0)
 				{
-					case '.':
-						paper[pos[0]][pos[1]] = '|';
-						break;
-					case '-':
-						paper[pos[0]][pos[1]] = '+';
-						break;
+					switch (paper[pos[0]-1][pos[1]])
+					{
+						case '.':
+							paper[pos[0]-1][pos[1]] = '|';
+							break;
+						case '-':
+							paper[pos[0]-1][pos[1]] = '+';
+							break;
+					}
 				}
 				switch (last)
 				{
 					case 1:
-						paper[pos[0]+1][pos[1]] = '+';
-						break;
 					case 3:
-						paper[pos[0]-1][pos[1]] = '+';
+						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
 				pos[0]--;
 				last = 0;
 				break;
 			case 'R':
-				switch (paper[pos[0]][pos[1]])
+				if (pos[1] < side-1)
 				{
-					case '.':
-						paper[pos[0]][pos[1]] = '-';
-						break;
-					case '|':
-						paper[pos[0]][pos[1]] = '+';
-						break;
+					switch (paper[pos[0]][pos[1]+1])
+					{
+						case '.':
+							paper[pos[0]][pos[1]+1] = '-';
+							break;
+						case '|':
+							paper[pos[0]][pos[1]+1] = '+';
+							break;
+					}
 				}
 				switch (last)
 				{
 					case 0:
-						paper[pos[0]][pos[1]-1] = '+';
-						break;
 					case 2:
-						paper[pos[0]][pos[1]+1] = '+';
+						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
 				pos[1]++;
 				last = 1;
 				break;
 			case 'D':
-				switch (paper[pos[0]][pos[1]])
+				if (pos[0] < side-1)
 				{
-					case '.':
-						paper[pos[0]][pos[1]] = '|';
-						break;
-					case '-':
-						paper[pos[0]][pos[1]] = '+';
-						break;
+					switch (paper[pos[0]+1][pos[1]])
+					{
+						case '.':
+							paper[pos[0]+1][pos[1]] = '|';
+							break;
+						case '-':
+							paper[pos[0]+1][pos[1]] = '+';
+							break;
+					}
 				}
 				switch (last)
 				{
 					case 1:
-						paper[pos[0]+1][pos[1]] = '+';
-						break;
 					case 3:
-						paper[pos[0]-1][pos[1]] = '+';
+						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
 				pos[0]++;
 				last = 2;
 				break;
 			case 'L':
-				switch (paper[pos[0]][pos[1]])
+				if (pos[1] > 0)
 				{
-					case '.':
-						paper[pos[0]][pos[1]] = '-';
-						break;
-					case '|':
-						paper[pos[0]][pos[1]] = '+';
-						break;
+					switch (paper[pos[0]-1][pos[1]])
+					{
+						case '.':
+							paper[pos[0]-1][pos[1]] = '-';
+							break;
+						case '|':
+							paper[pos[0]-1][pos[1]] = '+';
+							break;
+					}
 				}
 				switch (last)
 				{
 					case 0:
-						paper[pos[0]][pos[1]-1] = '+';
-						break;
 					case 2:
-						paper[pos[0]][pos[1]+1] = '+';
+						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
 				pos[1]--;
