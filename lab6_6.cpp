@@ -16,6 +16,20 @@ int main()
 	scanf("%s", cmd);
 	for (int i = 0; i < 250; i++)
 	{
+		if (last == 4)
+		{
+			switch (cmd[i])
+			{
+				case 'U':
+				case 'D':
+					paper[0][0] = '|';
+					break;
+				case 'R':
+				case 'L':
+					paper[0][0] = '-';
+					break;
+			}
+		}
 		switch (cmd[i])
 		{
 			case 'U':
