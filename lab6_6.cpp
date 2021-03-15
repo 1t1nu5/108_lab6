@@ -2,7 +2,7 @@
 #include <string.h>
 int main()
 {
-	int side, pos[2] = {0, 0}, last = 5; // y x
+	int side, pos[2] = {0, 0}, last = 4; // y x
 	scanf("%d", &side);
 	char paper[side][side];
 	for (int i = 0; i < side; i++)
@@ -31,10 +31,10 @@ int main()
 				switch (last)
 				{
 					case 1:
-						paper[pos[0]-1][pos[1]] = '+';
-						break;
-					case 2:
 						paper[pos[0]+1][pos[1]] = '+';
+						break;
+					case 3:
+						paper[pos[0]-1][pos[1]] = '+';
 						break;
 				}
 				pos[0]--;
@@ -50,6 +50,15 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
+				switch (last)
+				{
+					case 0:
+						paper[pos[0]][pos[1]-1] = '+';
+						break;
+					case 2:
+						paper[pos[0]][pos[1]+1] = '+';
+						break;
+				}
 				pos[1]++;
 				last = 1;
 				break;
@@ -63,7 +72,15 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
-				switch 
+				switch (last)
+				{
+					case 1:
+						paper[pos[0]+1][pos[1]] = '+';
+						break;
+					case 3:
+						paper[pos[0]-1][pos[1]] = '+';
+						break;
+				}
 				pos[0]++;
 				last = 2;
 				break;
@@ -75,6 +92,15 @@ int main()
 						break;
 					case '|':
 						paper[pos[0]][pos[1]] = '+';
+						break;
+				}
+				switch (last)
+				{
+					case 0:
+						paper[pos[0]][pos[1]-1] = '+';
+						break;
+					case 2:
+						paper[pos[0]][pos[1]+1] = '+';
 						break;
 				}
 				pos[1]--;
