@@ -4,7 +4,8 @@ int main()
 {
 	int n;
 	scanf("%d", &n);
-	int item[n];
+	char item[1000][n];
+	char swap[1000];
 	for (int i = 0; i < n; i++)
 	{
 		scanf("%d", item[i]);
@@ -14,7 +15,10 @@ int main()
 	{
 		for (int j = 0; j < i; j++)
 		{
-			
+			if (strcmp(item[j]), item[j+1] < 0)
+			{
+				
+			}
 		}
 	}
 	return 0;
