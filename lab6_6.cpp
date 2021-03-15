@@ -52,6 +52,18 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
+				if (pos[1] < side-1)
+				{
+					switch (paper[pos[0]][pos[1]+1])
+					{
+						case '.':
+							paper[pos[0]][pos[1]] = '|';
+							break;
+						case '-':
+							paper[pos[0]][pos[1]] = '+';
+							break;
+					}
+				}
 				pos[1]++;
 				break;
 			case 'D':
