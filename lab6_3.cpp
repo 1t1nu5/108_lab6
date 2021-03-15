@@ -10,5 +10,13 @@ int main()
 		score[love[i][0]]++;
 		score[love[i][i]]++;
 	}
+	int most = score[0];
+	for (int i = 1; i < people; i++)
+	{
+		if (most < score[i])
+		{
+			most = score[i];
+		}
+	}
 	return 0;
 }
