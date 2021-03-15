@@ -19,6 +19,13 @@ int main()
 			first = i;
 		}
 	}
-	printf("%d", first+1);
-	return 0;
+	printf("%d ", first+1);
+	for (int i = 0; i < people; i++)
+	{
+		if (love[i][0] == first || love[i][1] == first)
+		{
+			printf("%d", i);
+			return 0;
+		}
+	}
 }
