@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int main()
 {
 	int side, pos[2] = {0, 0};
@@ -11,5 +12,6 @@ int main()
 			paper[side][side] = '.';
 		}
 	}
+	char command[250] = {};
 	return 0;
 }
