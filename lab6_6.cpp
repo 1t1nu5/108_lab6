@@ -14,6 +14,9 @@ int main()
 	}
 	char cmd[250] = {};
 	scanf("%s", cmd);
-	
+	for (int i = 0; i < 250; i++)
+	{
+		
+	}
 	return 0;
 }
