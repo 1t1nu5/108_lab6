@@ -19,5 +19,6 @@ int main()
 			first = i;
 		}
 	}
+	printf("%d", first);
 	return 0;
 }
