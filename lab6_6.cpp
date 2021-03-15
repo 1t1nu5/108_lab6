@@ -2,7 +2,7 @@
 #include <string.h>
 int main()
 {
-	int side, pos[2] = {0, 0}; // x y
+	int side, pos[2] = {0, 0}; // y x
 	scanf("%d", side);
 	char paper[side][side];
 	for (int i = 0; i < side; i++)
@@ -28,7 +28,7 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
-				pos[1]--;
+				pos[0]--;
 				break;
 			case 'R':
 				switch (paper[pos[0]][pos[1]])
@@ -40,7 +40,7 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
-				pos[0]++;
+				pos[1]++;
 				break;
 			case 'D':
 				switch (paper[pos[0]][pos[1]])
@@ -52,7 +52,7 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
-				pos[1]++;
+				pos[0]++;
 				break;
 			case 'L':
 				switch (paper[pos[0]][pos[1]])
@@ -64,13 +64,20 @@ int main()
 						paper[pos[0]][pos[1]] = '+';
 						break;
 				}
-				pos[0]--;
+				pos[1]--;
 				break;
 				break;
 		}
 		if ((pos[0] < 0 || pos[0] >= side) && (pos[1] < 0 || pos[1] >= side) || cmd[i+1] == NULL)
 		{
 			break;
+		}
+	}
+	for (int i = 0; i < side; i++)
+	{
+		for (int j = 0; j < side; j++)
+		{
+			printf("%c", paper[i][j]);
 		}
 	}
 	return 0;
