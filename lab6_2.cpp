@@ -8,7 +8,7 @@ int main()
 	scanf("%s", ans);
 	scanf("%s", guess);
 	int score = 0;
-	for (int i - 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
 		if (ans[i] = guess[i])
 		{
