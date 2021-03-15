@@ -19,6 +19,15 @@ int main()
 		switch (cmd[i])
 		{
 			case 'U':
+				switch (paper[pos[0]][pos[1]])
+				{
+					case '.':
+						paper[pos[0]][pos[1]] = '|';
+						break;
+					case '-':
+						paper[pos[0]][pos[1]] = '+';
+						break;
+				}
 				break;
 			case 'R':
 				break;
