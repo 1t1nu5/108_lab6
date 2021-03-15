@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-	int side;
+	int side, pos[2] = {0, 0};
 	scanf("%d", side);
 	char paper[side][side];
 	for (int i = 0; i < side; i++)
