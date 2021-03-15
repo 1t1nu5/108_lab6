@@ -16,7 +16,17 @@ int main()
 	scanf("%s", cmd);
 	for (int i = 0; i < 250; i++)
 	{
-		
+		switch (cmd[i])
+		{
+			case 'U':
+				break;
+			case 'R':
+				break;
+			case 'D':
+				break;
+			case 'L':
+				break;
+		}
 	}
 	return 0;
 }
