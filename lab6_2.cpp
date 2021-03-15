@@ -7,10 +7,14 @@ int main()
 	int ans[n], guess[n];
 	scanf("%s", ans);
 	scanf("%s", guess);
-	int score;
+	int score = 0;
 	for (int i - 0; i < n; i++)
 	{
-		
+		if (ans[i] = guess[i])
+		{
+			score++;
+		}
 	}
+	printf("%d %d", score, n-score);
 	return 0;
 }
