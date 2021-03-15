@@ -12,6 +12,8 @@ int main()
 			paper[side][side] = '.';
 		}
 	}
-	char command[250] = {};
+	char cmd[250] = {};
+	scanf("%s", cmd);
+	
 	return 0;
 }
